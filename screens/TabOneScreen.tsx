@@ -1,15 +1,49 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ScrollView  } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
+import { AntDesign } from '@expo/vector-icons'; 
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+    <View style={styles.background}>
+      <View style={styles.buttons}>
+      <AntDesign name="stepbackward" size={50} color="#F2DBAE"  style={{backgroundColor:"#0C0D0C"}} />
+        <AntDesign name="play" size={50} color="#F2DBAE" style={{backgroundColor:"#0C0D0C"}} />
+        <AntDesign name="stepforward" size={50} color="#F2DBAE" style={{backgroundColor:"#0C0D0C"}} />
+      </View>
+       <View style={styles.container}>
+        <ScrollView  style={styles.scroll}>
+        <View style={styles.squareContainer}>
+            <View style={styles.square}>
+              
+            </View>
+         </View>
+         <View style={styles.squareContainer}>
+            <View style={styles.square}></View>
+         </View>
+         <View style={styles.squareContainer}>
+            <View style={styles.square}></View>
+         </View>
+         <View style={styles.squareContainer}>
+            <View style={styles.square}></View>
+         </View>
+         <View style={styles.squareContainer}>
+            <View style={styles.square}></View>
+         </View><View style={styles.squareContainer}>
+            <View style={styles.square}></View>
+         </View><View style={styles.squareContainer}>
+            <View style={styles.square}></View>
+         </View><View style={styles.squareContainer}>
+            <View style={styles.square}></View>
+         </View><View style={styles.squareContainer}>
+            <View style={styles.square}></View>
+         </View><View style={styles.squareContainer}>
+            <View style={styles.square}></View>
+         </View>
+        </ScrollView>
+      </View>
     </View>
   );
 }
@@ -19,10 +53,40 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    borderTopLeftRadius: 40,
+    borderTopRightRadius: 40,
+    backgroundColor:"#F4F6FA",
+    width: "100%"
   },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
+  background: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#0C0D0C'
+  },
+  scroll: {
+  },
+  buttons: {
+    flexDirection: "row",
+    alignItems: "center",
+    height: 50,
+    marginBottom: 15
+  },
+  squareContainer: {
+    marginTop: 15,
+    flexDirection: "row",
+    justifyContent:"space-between",
+    backgroundColor:"#F4F6FA",
+  },
+  square: {
+    width : 325,
+    height : 200,
+    borderRadius: 20,
+    backgroundColor: "black",
+    marginLeft: 15
+  },
+  text: {
+   color: 'white',
   },
   separator: {
     marginVertical: 30,
